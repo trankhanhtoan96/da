@@ -1,4 +1,4 @@
-# Install
+# 1. Install
 
 ```shell
 yum -y install net-tools network-scripts wget perl epel-release
@@ -7,7 +7,7 @@ chmod +x setup.sh
 sh setup.sh
 ```
 
-# Setup network
+# 2. Setup network
 
 ```shell
 vi /etc/sysconfig/network-scripts/ifcfg-eth0:100
@@ -21,14 +21,14 @@ IPADDR=176.99.3.34
 NETMASK=255.255.255.0
 ```
 
-# Change network
+# 3. Change network
 
 ```shell
 /usr/bin/perl -pi -e 's/^ethernet_dev=.*/ethernet_dev=eth0:100/' /usr/local/directadmin/conf/directadmin.conf
 ifup eth0:100
 ```
 
-# Get license
+# 4. Get license
 
 ```shell
 vi /usr/local/directadmin/scripts/update-license.sh
@@ -62,7 +62,7 @@ sh /usr/local/directadmin/scripts/update-license.sh
 0 12 */3 * * /usr/local/directadmin/scripts/update-license.sh
 ```
 
-# Use login information
+# 5. Use login information
 
 ```shell
 cat /usr/local/directadmin/scripts/setup.txt

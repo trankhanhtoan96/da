@@ -401,55 +401,8 @@ fi
 
 OS_MAJ_VER=`echo $OS_VER | cut -d. -f1`
 
-# Get the services file name:
-# services72.tar.gz
-# services73.tar.gz
-# services80.tar.gz
-# services90.tar.gz
-# services_freebsd48.tar.gz
-
-SERVICES="";
+SERVICES="services_es70_64.tar.gz";
 OS_NAME=
-
-if [ "$SERVICES" = "" ]; then
-
-	yesno="n";
-	while [ $yesno = "n" ];
-	do
-	{
-		echo "";
-		echo "*** Unable to determine which services pack to use ***";
-		echo "";
-		echo "Please type in the file name closest to your system from the following list:";
-		echo "";
-		echo "RHEL/CentOS:";
-		echo "  services_es60.tar.gz";
-		echo "  services_es60_64.tar.gz";
-		echo "  services_es70_64.tar.gz";
-		echo "  services_es80_64.tar.gz";
-		echo "";
-		echo "FreeBSD:";
-		echo "  services_freebsd90_64.tar.gz";
-		echo "  services_freebsd110_64.tar.gz";
-		echo "";
-		echo "Debian:";
-		echo "  services_debian80_64.tar.gz";
-		echo "  services_debian90_64.tar.gz";
-		echo "  services_debian100_64.tar.gz";
-		echo "";
-
-		echo -n "Type the filename: ";
-		read SERVICES
-
-		echo "";
-		echo "Value entered: $SERVICES";
-
-	        echo -n "Is this correct? (y,n) : ";
-	        read yesno;
-	}
-	done;
-
-fi
 
 /bin/mkdir -p $PACKAGES
 
